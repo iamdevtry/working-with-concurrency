@@ -13,7 +13,6 @@ func saySomething(i int, str string, wg *sync.WaitGroup) {
 func main() {
 	var wg sync.WaitGroup
 
-	wg.Add(9)
 	units := []string{
 		"kg",
 		"lb",
@@ -25,6 +24,8 @@ func main() {
 		"m",
 		"cm",
 	}
+
+	wg.Add(len(units))
 
 	for i, v := range units {
 		go saySomething(i, v, &wg)
