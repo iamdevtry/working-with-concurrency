@@ -12,7 +12,7 @@ func updateMessage(s string) {
 
 func main() {
 	msg = "Xin chao!"
-
+	//solve race condition problem
 	wg.Add(3)
 	go updateMessage("Hello!")
 	go updateMessage("Hola!")
