@@ -1,25 +1,25 @@
 package main
 
-import "sync"
+// import "sync"
 
-var wg sync.WaitGroup
-var msg string
+// var wg sync.WaitGroup
+// var msg string
 
-func updateMessage(s string) {
-	defer wg.Done()
-	msg = s
-}
+// func updateMessage(s string) {
+// 	defer wg.Done()
+// 	msg = s
+// }
 
-func main() {
-	msg = "Xin chao!"
-	//solve race condition problem
-	//solve race condition problem
-	wg.Add(3)
-	go updateMessage("Hello!")
-	go updateMessage("Hola!")
-	go updateMessage("Ni hao!")
-	wg.Wait()
+// func main() {
+// 	msg = "Xin chao!"
+// 	//solve race condition problem
+// 	//solve race condition problem
+// 	wg.Add(3)
+// 	go updateMessage("Hello!")
+// 	go updateMessage("Hola!")
+// 	go updateMessage("Ni hao!")
+// 	wg.Wait()
 
-	println(msg)
+// 	println(msg)
 
-}
+// }
